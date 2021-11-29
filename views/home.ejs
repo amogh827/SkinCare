@@ -1,0 +1,22 @@
+<%- include("partials/header"); -%>
+
+<div class="products row">
+  <% products.forEach(function(product){ %>
+
+  <div class="card product col-lg-6" style="width: 18rem">
+    <img
+      src="https://thumbs.dreamstime.com/z/white-cream-tube-packaging-plastic-medicine-cosmetics-gel-skin-care-toothpaste-mockup-clipping-path-isolated-blue-187446437.jpg"
+      class="card-img-top"
+      alt="hello"
+    />
+    <div class="card-body">
+      <h5 class="card-title"><%=product.Brand %></h5>
+      <p class="card-text"><%= product.Name %></p>
+      <a href="#" class="btn btn-primary">Rs. <%= product.Price %> </a>
+    </div>
+  </div>
+
+  <% }) %>
+</div>
+
+<%- include("partials/footer"); -%>
