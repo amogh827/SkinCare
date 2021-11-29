@@ -13,11 +13,11 @@ mongoose.connect(
 );
 
 const productSchema = mongoose.Schema({
-  Product_Type: String,
+  productType: String,
   Brand: String,
   Name: String,
   Price: Number,
-  Skin_Type: String,
+  skinType: String,
 });
 
 const Product = mongoose.model("skin", productSchema);
@@ -43,4 +43,11 @@ app.get("/", (req, res) => {
     });
   });
   // res.render("home");
+});
+
+app.get("/products/:skinType",(req,res)=>{
+  const skinType=req.params.skinType;
+  Product.find({"skinType": skinType},(err,results)=>{
+    res.send(results);
+  });
 });
