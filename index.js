@@ -3,9 +3,10 @@ const app = express();
 const ejs = require("ejs");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+const mongoKey = require(__dirname + "/mongokey.js")
 
 mongoose.connect(
-  "mongodb+srv://amogh:test123@cluster0.ebrf7.mongodb.net/skinCare",
+  mongoKey.getKey(),
   {
     useNewUrlParser: true,
   }
